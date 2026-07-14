@@ -1,0 +1,68 @@
+====================================================================
+ MONTE-CARLO POKER SIMULATOR - QUICK START
+====================================================================
+
+This project simulates millions of poker hands, validates the results
+against exact probability theory, and turns any paytable into a
+return-to-player and house edge. See README.md for the full details.
+
+
+REQUIREMENTS
+--------------------------------------------------------------------
+Python 3.9 or newer.
+
+
+1. INSTALL
+--------------------------------------------------------------------
+Open a terminal in this folder and run:
+
+    pip install -r requirements.txt
+
+
+2. RUN THE ANALYSIS (terminal)
+--------------------------------------------------------------------
+    python main.py
+
+Prints the hand frequencies, the statistical validation, and the
+house edge. Options:
+
+    python main.py -n 10000000     run 10 million hands
+    python main.py --convergence   also show the convergence study
+    python main.py --seed 42       use a specific random seed
+
+
+3. VISUAL REPORT (browser)
+--------------------------------------------------------------------
+    python report.py
+
+Writes report.html. Double-click it to open in any browser. The page
+shows the same results as charts and tables, in light or dark theme.
+
+
+4. CHANGE THE PAYTABLE
+--------------------------------------------------------------------
+Open paytables/example.json and edit the payout for any hand
+category, then run main.py or report.py again. The return-to-player
+and house edge are recalculated instantly, with no need to re-run the
+simulation. Payouts are the total amount returned per unit staked
+(0 = losing hand, 1 = push, higher = a win).
+
+
+5. RUN THE TESTS
+--------------------------------------------------------------------
+    python -m pytest
+
+The suite includes an exhaustive test that evaluates all 2,598,960
+possible hands and confirms the counts match theory exactly.
+
+
+FILE OVERVIEW
+--------------------------------------------------------------------
+    main.py        command-line analysis
+    report.py      generates the HTML report
+    validate.py    z-scores, chi-square test, convergence study
+    mcpoker/       the simulation engine and hand evaluator
+    paytables/     editable paytable files
+    tests/         correctness tests
+    README.md      full documentation
+====================================================================

@@ -1,0 +1,12 @@
+{
+    "_comment": "Illustrative paytable to demonstrate the RTP / house-edge calculation. It is NOT a tuned real-world game (it pays purely on the dealt 5-card rank, so its house edge is high). Replace the payouts with the real game's values. Keys other than the hand categories are ignored.",
+    "High card": 0,
+    "One pair": 1,
+    "Two pair": 2,
+    "Three of a kind": 3,
+    "Straight": 5,
+    "Flush": 8,
+    "Full house": 12,
+    "Four of a kind": 50,
+    "Straight flush": 500
+}
